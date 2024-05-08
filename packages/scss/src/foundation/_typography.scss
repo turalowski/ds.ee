@@ -1,0 +1,21 @@
+/*=============================================
+=            Foundation - Typography          =
+=============================================*/
+
+/*=============================================
+=            Body text sizes                  =
+=============================================*/
+
+$body-font-size: var(--dse-body-font-size, $fs-sm) !default;
+$body-font-weight: var(--dse-body-font-weight, $fw-normal) !default;
+
+/*=============================================
+=            Heading text sizes               =
+=============================================*/
+
+$h-1-font-size: var(--dse-h1-font-size, $h-1) !default;
+$h-2-font-size: var(--dse-h2-font-size, $h-2) !default;
+$h-3-font-size: var(--dse-h3-font-size, $h-3) !default;
+$h-4-font-size: var(--dse-h4-font-size, $h-4) !default;
+$h-5-font-size: var(--dse-h5-font-size, $h-5) !default;
+$h-6-font-size: var(--dse-h6-font-size, $h-6) !default;
