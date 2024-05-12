@@ -2,7 +2,7 @@
   "name": "@ds.e/core",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "yarn lerna run build",
     "dev": "yarn lerna run dev"
