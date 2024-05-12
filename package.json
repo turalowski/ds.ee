@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "yarn lerna run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "yarn lerna run dev"
   },
   "keywords": [],
   "author": "",
