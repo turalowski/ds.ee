@@ -29057,6 +29057,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
+var _Text = _interopRequireDefault(require("../../atoms/Text/Text.js"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
 const Select = ({
@@ -29064,22 +29066,34 @@ const Select = ({
   label = 'Please select an option ...',
   onOptionSelected: handler
 }) => {
+  const labelRef = (0, _react.useRef)(null);
   const [isOpen, setIsOpen] = (0, _react.useState)(false);
+  const [overlayTop, setOverlayTop] = (0, _react.useState)(0);
+  const [selectedIndex, setSelectedIndex] = (0, _react.useState)(null);
   const onOptionClicked = (option, optionIndex) => {
-    setIsOpen(!isOpen);
     if (handler) {
       handler(option, optionIndex);
     }
+    setSelectedIndex(optionIndex);
+    setIsOpen(false);
   };
   const onLabelClick = () => {
     setIsOpen(!isOpen);
   };
+  (0, _react.useEffect)(() => {
+    setOverlayTop(labelRef.current?.offsetHeight || 0 + 10);
+  }, [labelRef.current?.offsetHeight]);
+  let selectedOption = null;
+  if (selectedIndex !== null) {
+    selectedOption = options[selectedIndex];
+  }
   return _react.default.createElement("div", {
     className: "dse-select"
   }, _react.default.createElement("button", {
+    ref: labelRef,
     className: "dse-select__label",
     onClick: () => onLabelClick()
-  }, _react.default.createElement("span", null, " ", label), _react.default.createElement("svg", {
+  }, _react.default.createElement(_Text.default, null, selectedOption === null ? label : selectedOption.label), _react.default.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     fill: "none",
     viewBox: "0 0 24 24",
@@ -29092,16 +29106,34 @@ const Select = ({
     strokeLinejoin: "round",
     d: "m19.5 8.25-7.5 7.5-7.5-7.5"
   }))), isOpen ? _react.default.createElement("ul", {
+    style: {
+      top: overlayTop
+    },
     className: "dse-select__overlay"
   }, options.map((option, optionIndex) => {
+    const isSelected = selectedIndex === optionIndex;
     return _react.default.createElement("li", {
+      className: `dse-select__option
+${isSelected ? 'dse-select__option--selected' : ''}`,
       onClick: () => onOptionClicked(option, optionIndex),
       key: option.value
-    }, option.label);
+    }, _react.default.createElement(_Text.default, null, option.label), isSelected ? _react.default.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      fill: "none",
+      viewBox: "0 0 24 24",
+      strokeWidth: 1.5,
+      stroke: "currentColor",
+      height: "1rem",
+      width: "1rem"
+    }, _react.default.createElement("path", {
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      d: "m4.5 12.75 6 6 9-13.5"
+    })) : null);
   })) : null);
 };
 exports.default = Select;
-},{"react":"../../../node_modules/react/index.js"}],"../../../node_modules/@ds.e/react/lib/index.js":[function(require,module,exports) {
+},{"react":"../../../node_modules/react/index.js","../../atoms/Text/Text.js":"../../../node_modules/@ds.e/react/lib/atoms/Text/Text.js"}],"../../../node_modules/@ds.e/react/lib/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29240,7 +29272,11 @@ var options = [{
   value: 'pink'
 }];
 var root = (0, _client.createRoot)(document.querySelector('#root'));
-root.render(_react.default.createElement("div", null, _react.default.createElement(_react2.Select, {
+root.render(_react.default.createElement("div", {
+  style: {
+    padding: '40px'
+  }
+}, _react.default.createElement(_react2.Select, {
   options: options,
   label: "Please select size"
 })));

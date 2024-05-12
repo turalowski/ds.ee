@@ -10,7 +10,6 @@
     align-items: center;
     justify-content: space-between;
 
-    padding: map-get($spacing, 'xs');
     @include padding('xs');
     border: 1px solid $form-border-color;
     background: $form-bg-color;
@@ -28,5 +27,27 @@
     z-index: 99;
     position: absolute;
     width: 100%;
+    box-shadow: map-get($shadows, 'base');
+    list-style-type: none;
+
+  }
+
+  &__option {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    @include padding('xs');
+  }
+
+  &__option:hover {
+    background-color: $form-bg-color-hover;
+  }
+
+  &__option--selected {
+    background-color: $form-bg-option-selected;
+    color: $form-color-option-selected;
   }
 }
