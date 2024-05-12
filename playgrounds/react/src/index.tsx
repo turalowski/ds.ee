@@ -26,7 +26,13 @@ const options = [
 const root = createRoot(document.querySelector('#root') as Element);
 root.render(
   <div style={{ padding: '40px' }}>
-    <Select options={options} label="Please select size" />
+    <Select
+      options={options}
+      label="Please select size"
+      renderOption={({ option, getOptionRecommendedProps }) => (
+        <p {...getOptionRecommendedProps()}>{option.label}</p>
+      )}
+    />
   </div>
 );
 // <Select label='Please select a size' onOptionSelected={console.log} options={[{ label: '', value: '' }]} />

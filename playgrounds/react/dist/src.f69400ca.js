@@ -29064,6 +29064,7 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 const Select = ({
   options = [],
   label = 'Please select an option ...',
+  renderOption,
   onOptionSelected: handler
 }) => {
   const labelRef = (0, _react.useRef)(null);
@@ -29094,6 +29095,7 @@ const Select = ({
     className: "dse-select__label",
     onClick: () => onLabelClick()
   }, _react.default.createElement(_Text.default, null, selectedOption === null ? label : selectedOption.label), _react.default.createElement("svg", {
+    className: `dse-select__caret ${isOpen ? 'dse-select__caret--open' : 'dse-select__caret--closed'}`,
     xmlns: "http://www.w3.org/2000/svg",
     fill: "none",
     viewBox: "0 0 24 24",
@@ -29112,6 +29114,22 @@ const Select = ({
     className: "dse-select__overlay"
   }, options.map((option, optionIndex) => {
     const isSelected = selectedIndex === optionIndex;
+    const renderOptionProps = {
+      option,
+      isSelected,
+      getOptionRecommendedProps: (overrideProps = {}) => {
+        return {
+          className: `dse-select__option
+${isSelected ? 'dse-select__option--selected' : ''}`,
+          key: option.value,
+          onClick: () => onOptionClicked(option, optionIndex),
+          ...overrideProps
+        };
+      }
+    };
+    if (renderOption) {
+      return renderOption(renderOptionProps);
+    }
     return _react.default.createElement("li", {
       className: `dse-select__option
 ${isSelected ? 'dse-select__option--selected' : ''}`,
@@ -29261,6 +29279,12 @@ require("@ds.e/scss/lib/Margin.css");
 require("@ds.e/scss/lib/Select.css");
 require("@ds.e/scss/lib/global.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 var options = [{
   label: 'Strict Black',
   value: 'strict-black'
@@ -29278,7 +29302,12 @@ root.render(_react.default.createElement("div", {
   }
 }, _react.default.createElement(_react2.Select, {
   options: options,
-  label: "Please select size"
+  label: "Please select size",
+  renderOption: function renderOption(_ref) {
+    var option = _ref.option,
+      getOptionRecommendedProps = _ref.getOptionRecommendedProps;
+    return _react.default.createElement("p", _objectSpread({}, getOptionRecommendedProps()), option.label);
+  }
 })));
 // <Select label='Please select a size' onOptionSelected={console.log} options={[{ label: '', value: '' }]} />
 },{"react":"../../../node_modules/react/index.js","react-dom/client":"../../../node_modules/react-dom/client.js","@ds.e/react":"../../../node_modules/@ds.e/react/lib/index.js","@ds.e/scss/lib/Utilities.css":"../../../node_modules/@ds.e/scss/lib/Utilities.css","@ds.e/scss/lib/Text.css":"../../../node_modules/@ds.e/scss/lib/Text.css","@ds.e/scss/lib/Margin.css":"../../../node_modules/@ds.e/scss/lib/Margin.css","@ds.e/scss/lib/Select.css":"../../../node_modules/@ds.e/scss/lib/Select.css","@ds.e/scss/lib/global.css":"../../../node_modules/@ds.e/scss/lib/global.css"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
