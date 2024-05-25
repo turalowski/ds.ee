@@ -13,6 +13,15 @@ export default {
     sourcemap: true,
     preserveModules: true,
   },
-  plugins: [ts()],
+  plugins: [
+    ts({
+      tsconfigOverride: {
+        exclude: [
+          '../src/**/*.mdx',
+          '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+        ],
+      },
+    }),
+  ],
   external: ['react', '@ds.e/foundation'],
 };

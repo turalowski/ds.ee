@@ -155,7 +155,7 @@ const Select: React.FC<SelectProps> = ({
     <div className="dse-select">
       <button
         ref={labelRef}
-        data-testid='DseSelectButton'
+        data-testid="DseSelectButton"
         className="dse-select__label"
         onClick={() => onLabelClick()}
         onKeyDown={onButtonKeyDown}
@@ -182,68 +182,66 @@ const Select: React.FC<SelectProps> = ({
         </svg>
       </button>
 
-      {isOpen ? (
-        <ul
-          id="dse-select-list"
-          style={{ top: overlayTop }}
-          className="dse-select__overlay"
-          role="menu"
-        >
-          {options.map((option, optionIndex) => {
-            const isSelected = selectedIndex === optionIndex;
-            const isHighlighted = highlightedIndex === optionIndex;
-            const ref = optionRefs[optionIndex];
-            const renderOptionProps = {
-              option,
-              isSelected,
-              getOptionRecommendedProps: (overrideProps = {}) => {
-                return {
-                  ref: ref,
-                  role: 'menuitemradio',
-                  'aria-label': option.label,
-                  'aria-checked': isSelected ? true : undefined,
-                  onKeyDown: onOptionkeyDown,
-                  tabIndex: isHighlighted ? -1 : 0,
-                  className: `dse-select__option
+      <ul
+        id="dse-select-list"
+        style={{ top: overlayTop }}
+        className={`dse-select__overlay ${isOpen ? 'dse-select__overlay--open' : ''}`}
+        role="menu"
+      >
+        {options.map((option, optionIndex) => {
+          const isSelected = selectedIndex === optionIndex;
+          const isHighlighted = highlightedIndex === optionIndex;
+          const ref = optionRefs[optionIndex];
+          const renderOptionProps = {
+            option,
+            isSelected,
+            getOptionRecommendedProps: (overrideProps = {}) => {
+              return {
+                ref: ref,
+                role: 'menuitemradio',
+                'aria-label': option.label,
+                'aria-checked': isSelected ? true : undefined,
+                onKeyDown: onOptionkeyDown,
+                tabIndex: isHighlighted ? -1 : 0,
+                className: `dse-select__option
 ${isSelected ? 'dse-select__option--selected' : ''} ${isHighlighted ? 'dse-select__option--highlighted' : ''}`,
-                  key: option.value,
-                  onClick: () => onOptionClicked(option, optionIndex),
-                  onMouseEnter: () => highlightOption(optionIndex),
-                  onMouseLeave: () => highlightOption(null),
-                  ...overrideProps,
-                };
-              },
-            };
+                key: option.value,
+                onClick: () => onOptionClicked(option, optionIndex),
+                onMouseEnter: () => highlightOption(optionIndex),
+                onMouseLeave: () => highlightOption(null),
+                ...overrideProps,
+              };
+            },
+          };
 
-            if (renderOption) {
-              return renderOption(renderOptionProps);
-            }
+          if (renderOption) {
+            return renderOption(renderOptionProps);
+          }
 
-            return (
-              <li {...renderOptionProps.getOptionRecommendedProps()}>
-                <Text>{option.label}</Text>
-                {isSelected ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    height="1rem"
-                    width="1rem"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 12.75 6 6 9-13.5"
-                    />
-                  </svg>
-                ) : null}
-              </li>
-            );
-          })}
-        </ul>
-      ) : null}
+          return (
+            <li {...renderOptionProps.getOptionRecommendedProps()}>
+              <Text>{option.label}</Text>
+              {isSelected ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  height="1rem"
+                  width="1rem"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  />
+                </svg>
+              ) : null}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
