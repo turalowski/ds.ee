@@ -161,7 +161,6 @@ const Select: React.FC<SelectProps> = ({
         onKeyDown={onButtonKeyDown}
         aria-haspopup
         aria-expanded={isOpen ? true : undefined}
-        aria-controls="dse-select-list"
       >
         <Text>{selectedOption === null ? label : selectedOption.label}</Text>
         <svg
