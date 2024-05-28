@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from './Select';
 
-import '@ds.e/scss/lib/Select.css';
+import '@ds.ee/scss/lib/Select.css';
 
 export default {
   title: 'Select',

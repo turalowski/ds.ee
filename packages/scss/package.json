@@ -1,8 +1,8 @@
 {
-  "name": "@ds.e/scss",
+  "name": "@ds.ee/scss",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/turalowski/ds.e.git",
+  "repository": "https://github.com/turalowski/ds.ee.git",
   "author": "Tural Hajiyev <thajiyev9@outlook.com>",
   "license": "MIT",
   "scripts": {
@@ -26,5 +26,8 @@
     "stylelint-config-prettier-scss": "^1.0.0",
     "stylelint-config-sass-guidelines": "^11.1.0",
     "stylelint-prettier": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
