@@ -1,3 +1,4 @@
+// comment
 const spaces = {
   xxxs: 'xxxs',
   xxs: 'xxs',
