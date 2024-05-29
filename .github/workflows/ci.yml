@@ -11,7 +11,7 @@ jobs:
   builds:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Install dependencies
         run: yarn
@@ -24,5 +24,4 @@ jobs:
           CHROMATIC_PROJECT_TOKEN: ${{secrets.CHROMATIC_PROJECT_TOKEN}}
         run: yarn test:chromatic
         with:
-          projectToken: ${{secrets.CHROMATIC_PROJECT_TOKEN}}
-          fetch-depth: 0 # 👈 Required to retrieve git history
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
