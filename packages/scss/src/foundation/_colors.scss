@@ -9,9 +9,24 @@ $body-bg-color: var(--dse-body-bg-color, $white) !default;
 =            Buttons                          =
 =============================================*/
 
-$btn-primary-color: var(--dse-btn-primary-color, $white) !default;
-$btn-primary-bg: var(--dse-btn-primary-bg, $green) !default;
-$btn-primary-bg-hover: var(--dse-btn-primary-bg-hover, $green-light) !default;
+$btn-primary-bg: var(--dse-btn-primary-bg, $blue) !default;
+$btn-primary-bg-hover: var(--dse-btn-primary-bg-hover, $blue-dark) !default;
+
+$btn-secondary-bg: var(--dse-btn-secondary-bg, $gray) !default;
+$btn-secondary-bg-hover: var(--dse-btn-secondary-bg-hover, $gray-dark) !default;
+
+$btn-danger-bg: var(--dse-btn-danger-bg, $red) !default;
+$btn-danger-bg-hover: var(--dse-btn-danger-bg-hover, $red-dark) !default;
+
+$btn-warning-bg: var(--dse-btn-warning-bg, $yellow) !default;
+$btn-warning-bg-hover: var(--dse-btn-warning-bg-hover, $yellow-dark) !default;
+
+$btn-success-bg: var(--dse-btn-success-bg, $green) !default;
+$btn-success-bg-hover: var(--dse-btn-success-bg-hover, $green-dark) !default;
+
+$btn-text-color: var(--dse-btn-text-color, $text-dark) !default;
+$btn-link-color: var(--dse-btn-link-color, $blue) !default;
+$btn-link-color-hover: var(--dse-btn-link-color-hover, $blue-dark) !default;
 
 /*=============================================
 =            Forms                            =

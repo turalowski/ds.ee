@@ -2,23 +2,36 @@
 =            Colors                           =
 =============================================*/
 
-$green: #5ece7b;
-$green-light: #9ee2b0;
+/* Brand Colors */
+$blue: #1976D2;         
+$blue-light: #BBDEFB;  
+$blue-dark: #1565C0;  
 
-$dark: #1d1f22;
-$dark-light: #737680;
+$green: #2E7D32;       
+$green-light: #A5D6A7;  
+$green-dark: #1B5E20; 
 
-$gray: #a3a5ad;
-$gray-light: #bebfc4;
+$red: #D32F2F;       
+$red-light: #FFCDD2;
+$red-dark: #B71C1C;
 
-$white: #fff;
-$white-dark: #f1f2f3;
+/* Neutral Colors */
+$white: #FFFFFF;
+$white-dark: #F5F5F5;   
 
-$blue: #0468db;
-$blue-light: #b4d2f4;
+$gray: #757575;       
+$gray-light: #BDBDBD;  
+$gray-dark: #424242;
 
-$red: #d12727;
-$red-light: #f8dedf;
+$dark: #212121;        
+$dark-light: #616161;   
+
+$yellow: #FDD835; 
+$yellow-light: #FFF59D;
+$yellow-dark: #F9A825; 
+
+/* Text Colors */
+$text-dark: #1A1A1A;    
 
 /*=============================================
 =            Typography                       =

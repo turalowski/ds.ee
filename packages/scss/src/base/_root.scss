@@ -2,12 +2,20 @@
   --dse-body-text-color: #{$dark};
   --dse-body-bg-color: #{$white};
 
-  --dse-btn-primary-color: #{$white};
-  --dse-btn-primary-bg: #{$green};
-  --dse-btn-primary-bg-hover: #{$green-light};
-
-  --dse-btn-secondary-color: #{$white};
-  --dse-btn-secondary-bg: #{$dark};
+  // Add these to the existing root variables
+  --dse-btn-primary-bg: #{$blue};
+  --dse-btn-primary-bg-hover: #{$blue-dark};
+  --dse-btn-secondary-bg: #{$gray};
+  --dse-btn-secondary-bg-hover: #{$gray-dark};
+  --dse-btn-danger-bg: #{$red};
+  --dse-btn-danger-bg-hover: #{$red-dark};
+  --dse-btn-warning-bg: #{$yellow};
+  --dse-btn-warning-bg-hover: #{$yellow-dark};
+  --dse-btn-success-bg: #{$green};
+  --dse-btn-success-bg-hover: #{$green-dark};
+  --dse-btn-text-color: #{$text-dark};
+  --dse-btn-link-color: #{$blue};
+  --dse-btn-link-color-hover: #{$blue-dark};
 
   --dse-form-color: #{$dark};
   --dse-form-bg: #{$white};

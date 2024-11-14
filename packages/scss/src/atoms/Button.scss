@@ -3,71 +3,71 @@
 .dse-button {
   border: none;
   border-radius: 4px;
-  padding: 8px 16px;
+  padding: map-get($spacing, 'xs') map-get($spacing, 'sm');
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  font-weight: 500;
+  font-weight: $fw-medium;
 
   // Size variants
   &--small {
-    padding: 6px 12px;
-    font-size: 14px;
+    padding: map-get($spacing, 'xxxs') map-get($spacing, 'xxs');
+    font-size: $fs-sm;
   }
 
   &--medium {
-    padding: 8px 16px;
-    font-size: 16px;
+    padding: map-get($spacing, 'xs') map-get($spacing, 'sm');
+    font-size: $fs-base;
   }
 
   &--large {
-    padding: 12px 24px;
-    font-size: 18px;
+    padding: map-get($spacing, 'sm') map-get($spacing, 'md');
+    font-size: $fs-lg;
   }
 
   // Variant styles
   &--primary {
-    background-color: #007bff;
-    color: white;
+    background-color: $btn-primary-bg;
+    color: $white;
     &:hover {
-      background-color: darken(#007bff, 10%);
+      background-color: $btn-primary-bg-hover;
     }
   }
 
   &--secondary {
-    background-color: #6c757d;
-    color: white;
+    background-color: $btn-secondary-bg;
+    color: $white;
     &:hover {
-      background-color: darken(#6c757d, 10%);
+      background-color: $btn-secondary-bg-hover;
     }
   }
 
   &--danger {
-    background-color: #dc3545;
-    color: white;
+    background-color: $btn-danger-bg;
+    color: $white;
     &:hover {
-      background-color: darken(#dc3545, 10%);
+      background-color: $btn-danger-bg-hover;
     }
   }
 
   &--warning {
-    background-color: #ffc107;
-    color: #212529;
+    background-color: $btn-warning-bg;
+    color: $btn-text-color;
     &:hover {
-      background-color: darken(#ffc107, 10%);
+      background-color: $btn-warning-bg-hover;
     }
   }
 
   &--success {
-    background-color: #28a745;
-    color: white;
+    background-color: $btn-success-bg;
+    color: $white;
     &:hover {
-      background-color: darken(#28a745, 10%);
+      background-color: $btn-success-bg-hover;
     }
   }
 
   &--text {
     background-color: transparent;
-    color: #212529;
+    color: $btn-text-color;
     padding: 0;
     &:hover {
       text-decoration: underline;
@@ -76,11 +76,11 @@
 
   &--link {
     background-color: transparent;
-    color: #007bff;
+    color: $btn-link-color;
     padding: 0;
     &:hover {
       text-decoration: underline;
-      color: darken(#007bff, 15%);
+      color: $btn-link-color-hover;
     }
   }
 
@@ -98,6 +98,6 @@
   // Focus state
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 3px rgba($btn-primary-bg, 0.25);
   }
 }
