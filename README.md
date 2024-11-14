@@ -1,107 +1,103 @@
-# Brief information
+# Design System (ds.ee)
 
-This repository is created to show real how to implement design system and use monorepository to create multiple packages. Following packages are exist in the repo:
+A comprehensive design system built with React, TypeScript, and SCSS, utilizing a monorepo architecture with Yarn workspaces and Lerna.
 
-- `@ds.ee/scss` -> All system variables and foundation styles
-- `@ds.ee/react` -> React components developed by using `@ds.ee/scss` package
-- `@ds.ee/playgrounds/react` -> Package to play and test React components.
+## Packages
 
-# Monorepositories
+The repository consists of the following packages:
 
-`yarn` and `lerna` used to manage packages across the repository.
+- `@ds.ee/scss`: Core SCSS variables, mixins, and foundation styles
+- `@ds.ee/react`: React components built using `@ds.ee/scss`
+- `@ds.ee/foundation`: Shared constants and foundation elements
+- `@ds.ee/playgrounds/react`: Development playground for testing components
 
-Main role of `yarn` is to manage workspaces, which is helpful to store `node_modules` folder in the root directory. It's the main benefit of workspaces of yarn, it help to share `node_modules` at the top level and only relevant scripts are symlinked into the package project itself.
+## Architecture
 
-# @ds.ee/scss
+### Component Structure
 
-This package is used to store system variables and style elements. We use 2 level of abstraction here:
+Components are organized following the Atomic Design methodology:
 
+- **Atoms**: Basic building blocks (Text, Color, Margin)
+- **Molecules**: Combinations of atoms (Select, Accordion)
+- **Organisms**: Complex UI components (coming soon)
+- **Templates**: Page-level layouts (coming soon)
+- **Pages**: Specific implementations (coming soon)
+
+### Monorepo Setup
+
+The project uses:
+- **Yarn Workspaces**: Manages dependencies and enables package symlinks
+- **Lerna**: Handles versioning and publishing
+- **Rollup**: Bundles the React components
+- **Storybook**: Component development and documentation
+
+## Getting Started
+
+1. Install dependencies:
+
+```bash
+yarn install
 ```
-_variables.scss -> _root.scss -> _colors.scss & _typography.scss
+
+2. Build all packages:
+
+```bash
+yarn build
 ```
 
-If it's required to customzie theming, users can override `_root.scss` variables and define their owns. 
+3. Start development:
 
-## System variables
-
-System variables is used to define simple variables, such as used green color in reopo, used font in repo etc. 
-
-These variables are defined in `@ds.ee/packages/scss/src/foundation/_variables.scss`
-
-Example:
-
-```
-$green: #5ece7b;
-$green-light: #9ee2b0;
+```bash
+yarn dev
 ```
 
-In future, if you decide to use another shade of green color, updating `$green` variable will be enough.
+4. Run tests:
 
-Following system variables are exist:
+```bash
+yarn test
+```
 
-- Colors
-- Typography
-- Breakpoints
-- Spacing
-- Font Sizes
+## Development
 
-These variables are used to define root variables, and root variables also used to define design system variables. If user need to override styles, he just need to import root css and override its values.
+### Available Scripts
 
-## Compile SCSS to CSS
+- `yarn build`: Build all packages
+- `yarn dev`: Start development mode
+- `yarn test`: Run tests
+- `yarn publish`: Test, build, and publish packages
+- `yarn commit`: Use commitizen for conventional commits
+- `yarn test:chromatic`: Run visual regression tests
+- `yarn build:storybook`: Build Storybook documentation
 
-`@ds.ee/packages/scss/src/scripts/build.js` script is used to compile all scss files to css. All css files are stored in `/lib/*` folder.
+### Component Development
 
-This script is used by `build` and `dev` scripts.
+Components are built with:
+- TypeScript for type safety
+- React for UI
+- SCSS for styling
+- Jest and React Testing Library for testing
+- Storybook for development and documentation
 
-# @ds.ee/foundation
+### Styling Architecture
 
-Foundation package is used to create dynamic objects for font size and spacing. This helps to know which values are exist without checking `@ds.ee/scss` and using auto completion feature.
+The system uses a three-layer approach:
 
-# React package
+1. **System Variables** (`_variables.scss`)
+   - Basic design tokens (colors, typography, spacing)
+   - Example: `$green: #5ece7b`
 
-React package is used to store main components. It's using following naming convention:
+2. **Root Variables** (`_root.scss`)
+   - CSS custom properties
+   - Can be overridden for theming
 
-- **Atoms**: The most basic building blocks, such as buttons, inputs, labels, etc.
-- **Molecules**: Combinations of atoms, like a form group with a label and an input.
-- **Organisms**: Groups of molecules forming a distinct section of an interface, like a header or a sidebar.
-- **Templates**: Page-level components that place organisms into a layout.
-- **Pages**: Specific instances of templates, filling in the template with real content.
+3. **Component Styles**
+   - BEM methodology
+   - Scoped to component
 
-## Compile
+### Testing
 
-`rollup` package is used bundle the React application. The destination folder is `/lib`.
-
-
-## Unit Testing
-
-`jest` and `@testing-library/react` packages are used to write unit tests for React components.
-
-## Storybook
-
-Storybook is a tool used to visually test React components. The following addons are integrated with Storybook to enhance its functionality:
-
-- @storybook/addon-webpack5-compiler-swc: Integrates SWC compiler with Webpack 5 for faster builds and optimizations.
-- @storybook/addon-onboarding: Provides a guided onboarding experience for new users of Storybook.
-- @storybook/addon-links: Enables navigation between stories for better component documentation.
-- @storybook/addon-essentials: A collection of essential addons for Storybook, including actions, backgrounds, controls, docs, viewport, and toolbars.
-- @chromatic-com/storybook: Connects Storybook with Chromatic for automated visual testing and UI review.
-- @storybook/addon-interactions: Facilitates testing and simulating user interactions within stories.
-- @storybook/addon-controls: Allows for dynamic editing of component props directly in the Storybook UI.
-- @storybook/addon-a11y: Helps ensure accessibility compliance by providing tools to test and improve the accessibility of components.
-
-## Commits and Changelog
-
-`commitizen` and `cz-conventional-changelog` are used to generate well defined configs and keep record of all commits.
-
-It's integrated with precommit hook, to avoid using of `git commit`
-
-To create a commit, `yarn run commit` command should be used.
-
-## Publish to npm
-
-`lerna publish` command is used to publish the repository to npm.
-
-## Github actions / CI / CD
-
-Github actions is used to check build and test of all packages. In addition, it's used for chromatic, to publish visual testing for Storybook. 
-
+Components are tested using:
+- Jest for unit testing
+- React Testing Library for component testing
+- Chromatic for visual regression testing
+- Storybook for interactive testing
