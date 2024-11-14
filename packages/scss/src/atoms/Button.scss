@@ -1,10 +1,91 @@
 @import "foundation/all";
 
-.dse-button-container {
-  display: flex;
-
-  background: $btn-primary-bg;
-  color: $btn-primary-color;
+.dse-button {
   border: none;
-  padding: map-get($spacing, 'xxxs')
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+
+  // Size variants
+  &--small {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  &--medium {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  &--large {
+    padding: 12px 24px;
+    font-size: 18px;
+  }
+
+  // Variant styles
+  &--primary {
+    background-color: #007bff;
+    color: white;
+    &:hover { background-color: darken(#007bff, 10%); }
+  }
+
+  &--secondary {
+    background-color: #6c757d;
+    color: white;
+    &:hover { background-color: darken(#6c757d, 10%); }
+  }
+
+  &--danger {
+    background-color: #dc3545;
+    color: white;
+    &:hover { background-color: darken(#dc3545, 10%); }
+  }
+
+  &--warning {
+    background-color: #ffc107;
+    color: #212529;
+    &:hover { background-color: darken(#ffc107, 10%); }
+  }
+
+  &--success {
+    background-color: #28a745;
+    color: white;
+    &:hover { background-color: darken(#28a745, 10%); }
+  }
+
+  &--text {
+    background-color: transparent;
+    color: #212529;
+    padding: 0;
+    &:hover { text-decoration: underline; }
+  }
+
+  &--link {
+    background-color: transparent;
+    color: #007bff;
+    padding: 0;
+    &:hover {
+      text-decoration: underline;
+      color: darken(#007bff, 15%);
+    }
+  }
+
+  // Modifiers
+  &--full-width {
+    width: 100%;
+  }
+
+  &--disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // Focus state
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  }
 }
