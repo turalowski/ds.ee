@@ -1,5 +1,7 @@
 # Design System (ds.ee)
 
+[![Build & Test CI](https://github.com/turalowski/ds.ee/actions/workflows/ci.yml/badge.svg)](https://github.com/turalowski/ds.ee/actions/workflows/ci.yml)
+
 A comprehensive design system built with React, TypeScript, and SCSS, utilizing a monorepo architecture with Yarn workspaces and Lerna.
 
 ## Packages
