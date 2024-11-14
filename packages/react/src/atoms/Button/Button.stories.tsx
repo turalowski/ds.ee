@@ -1,11 +1,13 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
+import '@ds.ee/scss/lib/Button.css';
+
+
 import Button from './Button';
 
 const meta: Meta<typeof Button> = {
   title: 'Atoms/Button',
   component: Button,
-  tags: ['autodocs'],
   argTypes: {
     variant: {
       control: 'select',

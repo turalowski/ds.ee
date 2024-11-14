@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Select } from '@ds.ee/react';
 
+import '@ds.ee/scss/src/lib/Button.css';
 import '@ds.ee/scss/lib/Utilities.css';
 import '@ds.ee/scss/lib/Text.css';
 import '@ds.ee/scss/lib/Margin.css';
