@@ -1,7 +1,6 @@
 import Color from './Color';
 import type { Meta, StoryObj } from '@storybook/react';
 
-// css
 import '@ds.ee/scss/lib/Utilities.css';
 import { Spacing } from '@ds.ee/foundation';
 
