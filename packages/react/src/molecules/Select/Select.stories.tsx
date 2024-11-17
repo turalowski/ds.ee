@@ -1,11 +1,17 @@
 import React from 'react';
 import Select from './Select';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import '@ds.ee/scss/lib/Select.css';
 
-export default {
-  title: 'Select',
+const meta: Meta<typeof Select> = {
+  title: 'Design System/Molecules/Select',
+  component: Select,
 };
+
+export default meta;
+
+type Story = StoryObj<typeof Select>;
 
 const options = [
   {
@@ -22,19 +28,25 @@ const options = [
   },
 ];
 
-export const Common = () => <Select options={options} />;
+export const Common: Story = {
+  render: () => <Select options={options} />
+};
 
-export const RenderOption = () => (
-  <Select
-    options={options}
-    renderOption={({ getOptionRecommendedProps, option, isSelected }) => (
-      <span {...getOptionRecommendedProps()}>
-        {option.label} {isSelected ? 'SELECTED' : ''}
-      </span>
-    )}
-  />
-);
+export const RenderOption: Story = {
+  render: () => (
+    <Select
+      options={options}
+      renderOption={({ getOptionRecommendedProps, option, isSelected }) => (
+        <span {...getOptionRecommendedProps()}>
+          {option.label} {isSelected ? 'SELECTED' : ''}
+        </span>
+      )}
+    />
+  )
+};
 
-export const CustomLabel = () => (
-  <Select label="Select a color" options={options} />
-);
+export const CustomLabel: Story = {
+  render: () => (
+    <Select label="Select a color" options={options} />
+  )
+};

@@ -6,6 +6,7 @@ import '@ds.ee/scss/lib/Utilities.css';
 import { Spacing } from '@ds.ee/foundation';
 
 const meta: Meta<typeof Color> = {
+  title: 'Design System/Atoms/Color',
   component: Color,
   argTypes: {
     width: {

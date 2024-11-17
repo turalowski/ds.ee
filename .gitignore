@@ -4,5 +4,5 @@ lib/
 dist
 .cache
 stories/
-
+.env.local
 *storybook.log

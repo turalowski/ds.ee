@@ -10,7 +10,8 @@
     "lint:fix": "yarn lint --fix",
     "prepare": "husky",
     "build": "node src/scripts/build",
-    "dev": "nodemon --watch src --exec yarn build -e scss"
+    "dev": "nodemon --watch src --exec yarn build -e scss",
+    "storybook": "yarn dev"
   },
   "dependencies": {
     "normalize-scss": "^8.0.0",
