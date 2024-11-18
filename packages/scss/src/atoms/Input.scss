@@ -1,0 +1,47 @@
+@import "foundation/all";
+
+.dse-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: map-get($spacing, 'xxxs');
+}
+
+.dse-input-label {
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  color: $form-label-color;
+}
+
+.dse-input {
+  padding: map-get($spacing, 'xs') map-get($spacing, 'sm');
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  border: 1px solid $form-border-color;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border-color: $form-border-focus-color;
+    box-shadow: 0 0 0 2px rgba($form-border-focus-color, 0.1);
+  }
+
+  &:disabled {
+    background-color: $form-background-disabled;
+    cursor: not-allowed;
+  }
+
+  &.dse-input-error {
+    border-color: $form-error-color;
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba($form-error-color, 0.1);
+    }
+  }
+}
+
+.dse-input-error-message {
+  font-family: $body-font-family;
+  font-size: $body-font-size-sm;
+  color: $form-error-color;
+}
