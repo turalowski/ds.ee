@@ -12,7 +12,8 @@
     "prepare": "husky",
     "storybook": "yarn lerna run storybook",
     "test:chromatic": "yarn lerna run test:chromatic",
-    "build-storybook": "yarn build && yarn lerna run build-storybook"
+    "build-storybook": "yarn build && yarn lerna run build-storybook",
+    "chromatic": "npx chromatic --project-token=chpt_57c78762a08fb47"
   },
   "keywords": [],
   "author": "",

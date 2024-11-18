@@ -8,7 +8,6 @@ export default {
     'src/atoms/Button/index.ts',
     'src/atoms/Input/index.ts',
     'src/atoms/Typography/index.ts',
-    'src/molecules/Select/index.ts',
   ],
   output: {
     dir: 'lib',
