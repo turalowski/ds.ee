@@ -1,10 +1,42 @@
 @import "foundation/all";
 
-.dse-button-container {
-  display: flex;
-
-  background: $btn-primary-bg;
-  color: $btn-primary-color;
+.dse-button {
   border: none;
-  padding: map-get($spacing, 'xxxs')
+  border-radius: map-get($button-radius, 'base');
+  cursor: pointer;
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  padding: map-get($spacing, 'xs') map-get($spacing, 'sm');
+  transition: all 0.2s ease-in-out;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &-primary {
+    background: $btn-primary-bg;
+    color: $btn-primary-color;
+    border: 1px solid $btn-primary-bg;
+
+    &:hover:not(:disabled) {
+      background: $btn-primary-bg-hover;
+      border-color: $btn-primary-bg-hover;
+    }
+  }
+
+  &-secondary {
+    background: $btn-secondary-bg;
+    color: $btn-secondary-color;
+    border: 1px solid $btn-secondary-border;
+
+    &:hover:not(:disabled) {
+      background: $btn-secondary-bg-hover;
+    }
+
+    &:disabled {
+      border-color: $gray-light;
+      color: $gray;
+    }
+  }
 }
