@@ -13,6 +13,11 @@ $btn-primary-color: var(--dse-btn-primary-color, $white) !default;
 $btn-primary-bg: var(--dse-btn-primary-bg, $green) !default;
 $btn-primary-bg-hover: var(--dse-btn-primary-bg-hover, $green-light) !default;
 
+$btn-secondary-color: var(--dse-btn-secondary-color, $dark) !default;
+$btn-secondary-bg: var(--dse-btn-secondary-bg, $white) !default;
+$btn-secondary-border: var(--dse-btn-secondary-border, $dark) !default;
+$btn-secondary-bg-hover: var(--dse-btn-secondary-bg-hover, $white-dark) !default;
+
 /*=============================================
 =            Forms                            =
 =============================================*/
@@ -27,3 +32,5 @@ $form-bg: var(--dse-form-bg, $white) !default;
 $form-error-color: var(--dse-form-error-color, $red) !default;
 $form-error-border: var(--dse-form-error-border, $red) !default;
 $form-border-focus-color: var(--dse-form-border-focus-color, $green) !default;
+$form-label-color: var(--dse-form-label-color, $dark) !default;
+$form-background-disabled: var(--dse-form-background-disabled, $white-dark) !default;

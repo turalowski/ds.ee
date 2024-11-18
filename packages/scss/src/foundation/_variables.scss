@@ -24,11 +24,11 @@ $red-light: #f8dedf;
 =            Typography                       =
 =============================================*/
 
+
 /* Font Families */
 $playfair: 'Playfair', serif;
-/* 1 */
+
 $raleway: 'Raleway', 'HelveticaNeue', 'Helvetica', sans-serif;
-/* 2 */
 
 /* Font Sizes */
 $fs-xs: 0.75rem; // 12px
@@ -38,7 +38,7 @@ $fs-lg: 1.125rem; // 18px
 $fs-xl: 1.5rem; //24px
 
 /* Heading font sizes */
-$h-1: 1.375rem; // 22px
+$h-1: 1.75rem; // 28px
 $h-2: 1.375rem; // 22px
 $h-3: 1rem; // 16px
 $h-4: 1.125rem; // 18px
@@ -53,6 +53,10 @@ $fw-semibold: 600;
 $fw-bold: 700;
 $fw-extrabold: 800;
 $fw-black: 900;
+
+$body-font-family: $raleway !default;
+$body-font-size: $fs-base !default;
+$body-font-size-sm: $fs-sm !default;
 
 /*=============================================
 =            Breakpoints                      =
@@ -109,3 +113,25 @@ $fs: (
 $shadows: (
   base: 0px 4px 11px rgba(157, 157, 157, 0.21)
 );
+
+
+$button-padding: (
+  small: (
+    x: map-get($spacing, 'xs'),
+    y: map-get($spacing, 'xxs')
+  ),
+  base: (
+    x: map-get($spacing, 'sm'),
+    y: map-get($spacing, 'xs')
+  ),
+  large: (
+    x: map-get($spacing, 'md'),
+    y: map-get($spacing, 'sm')
+  )
+) !default;
+
+$button-radius: (
+  small: 0.25rem,
+  base: 0.375rem,
+  large: 0.5rem
+) !default;
