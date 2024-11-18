@@ -5,7 +5,7 @@ const sass = require('sass');
 const getComponents = () => {
   let allComponents = [];
 
-  const types = ['atoms', 'molecules'];
+  const types = ['atoms' ];
 
   types.forEach(type => {
     const allFiles = fs.readdirSync(`src/${type}`).map(file => ({
