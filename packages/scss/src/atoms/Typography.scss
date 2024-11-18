@@ -1,0 +1,49 @@
+@import "foundation/all";
+
+.dse-typography {
+  margin: 0;
+  font-family: $body-font-family;
+}
+
+// Heading styles
+.dse-typography-h1 {
+  font-weight: $h-1-font-weight;
+  font-size: $h-1-font-size;
+}
+
+.dse-typography-h2 {
+  font-weight: $h-2-font-weight;
+  font-size: $h-2-font-size;
+}
+
+.dse-typography-h3 {
+  font-weight: $h-3-font-weight;
+  font-size: $h-3-font-size;
+}
+
+.dse-typography-h4 {
+  font-weight: $h-4-font-weight;
+  font-size: $h-4-font-size;
+}
+
+.dse-typography-h5 {
+  font-weight: $h-5-font-weight;
+  font-size: $h-5-font-size;
+}
+
+.dse-typography-h6 {
+  font-weight: $h-6-font-weight;
+  font-size: $h-6-font-size;
+}
+
+// Body and caption styles
+.dse-typography-body {
+  font-weight: $body-font-weight;
+  font-size: $body-font-size;
+}
+
+.dse-typography-caption {
+  font-weight: $fw-normal;
+  font-size: $fs-xs;
+  color: $gray;
+}

@@ -5,6 +5,9 @@ export default {
     'src/index.ts',
     'src/atoms/Color/index.ts',
     'src/atoms/Margin/index.ts',
+    'src/atoms/Button/index.ts',
+    'src/atoms/Input/index.ts',
+    'src/atoms/Typography/index.ts',
     'src/molecules/Select/index.ts',
   ],
   output: {
