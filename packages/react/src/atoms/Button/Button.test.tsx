@@ -81,4 +81,15 @@ describe('Button', () => {
     
     expect(getByText('Custom Content')).toBeInTheDocument();
   });
+
+  it('renders danger variant correctly', () => {
+    const { getByRole } = render(
+      <Button title="Danger Button" variant="danger">
+        Danger
+      </Button>
+    );
+    
+    const button = getByRole('button');
+    expect(button).toHaveClass('dse-button dse-button-danger');
+  });
 });

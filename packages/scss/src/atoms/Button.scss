@@ -1,4 +1,4 @@
-@import "foundation/all";
+@import 'foundation/all';
 
 .dse-button {
   border: none;
@@ -37,6 +37,21 @@
     &:disabled {
       border-color: $gray-light;
       color: $gray;
+    }
+  }
+
+  &-danger {
+    background: $btn-danger-bg;
+    color: $btn-danger-color;
+    border: 1px solid $btn-danger-bg;
+
+    &:hover:not(:disabled) {
+      background: $btn-danger-bg-hover;
+      border-color: $btn-danger-bg-hover;
+    }
+
+    &:disabled {
+      opacity: 0.5;
     }
   }
 }

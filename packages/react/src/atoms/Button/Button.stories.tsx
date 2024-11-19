@@ -8,7 +8,7 @@ const meta: Meta<typeof Button> = {
   component: Button,
   argTypes: {
     variant: {
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', 'danger'],
       control: { type: 'select' },
     },
     disabled: {
@@ -35,6 +35,15 @@ export const Secondary: Story = {
     title: 'Secondary Button',
     children: 'Secondary Button',
     variant: 'secondary',
+    disabled: false,
+  },
+};
+
+export const Danger: Story = {
+  args: {
+    title: 'Danger Button',
+    children: 'Danger Button',
+    variant: 'danger',
     disabled: false,
   },
 };
