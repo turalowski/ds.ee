@@ -38,3 +38,12 @@ $form-error-border: var(--dse-form-error-border, $red) !default;
 $form-border-focus-color: var(--dse-form-border-focus-color, $green) !default;
 $form-label-color: var(--dse-form-label-color, $dark) !default;
 $form-background-disabled: var(--dse-form-background-disabled, $white-dark) !default;
+
+/*=============================================
+=            Accordion                        =
+=============================================*/
+
+$accordion-border-color: var(--dse-accordion-border-color, $gray-light) !default;
+$accordion-color: var(--dse-accordion-color, $dark) !default;
+$accordion-bg: var(--dse-accordion-bg, $white) !default;
+$accordion-hover-bg: var(--dse-accordion-hover-bg, rgba($gray-light, 0.1)) !default;

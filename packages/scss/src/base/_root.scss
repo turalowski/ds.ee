@@ -49,4 +49,10 @@
   --dse-form-error-color: #{$red};
   --dse-form-error-border: #{$red};
   --dse-form-border-focus-color: #{$green};
+
+  /* Accordion */
+  --dse-accordion-border-color: #{$gray-light};
+  --dse-accordion-color: #{$dark};
+  --dse-accordion-bg: #{$white};
+  --dse-accordion-hover-bg: #{rgba($gray-light, 0.1)};
 }
