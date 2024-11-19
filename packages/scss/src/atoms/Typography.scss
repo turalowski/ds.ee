@@ -47,3 +47,9 @@
   font-size: $fs-xs;
   color: $gray;
 }
+
+@each $size, $value in $fs {
+  .dse-typography-#{$size} {
+    font-size: $value;
+  }
+}

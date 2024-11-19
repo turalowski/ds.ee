@@ -1,6 +1,5 @@
 import Typography from './Typography';
 import type { Meta, StoryObj } from '@storybook/react';
-import { FontSize } from '@ds.ee/foundation';
 
 import '@ds.ee/scss/lib/Typography.css';
 
@@ -10,10 +9,6 @@ const meta: Meta<typeof Typography> = {
   argTypes: {
     variant: {
       options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'body', 'caption'],
-      control: { type: 'select' },
-    },
-    size: {
-      options: Object.keys(FontSize),
       control: { type: 'select' },
     },
   },
@@ -54,7 +49,6 @@ export const Caption: Story = {
 export const CustomSize: Story = {
   args: {
     variant: 'body',
-    size: 'xl',
     children: 'Body text with custom size',
   },
 };
