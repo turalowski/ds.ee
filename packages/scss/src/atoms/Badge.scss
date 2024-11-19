@@ -1,0 +1,46 @@
+@import "foundation/all";
+
+.dse-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: map-get($spacing, 'xxxs') map-get($spacing, 'xs');
+  border-radius: 16px;
+  font-size: $fs-sm;
+  font-weight: $fw-medium;
+  line-height: 1;
+  gap: map-get($spacing, 'xxs');
+  font-family: $body-font-family;
+
+  &-default {
+    background-color: $gray-light;
+    color: $white;
+  }
+
+  &-success {
+    background-color: $success;
+    color: $white;
+  }
+
+  &-warning {
+    background-color: $warning;
+    color: $white;
+  }
+
+  &-error {
+    background-color: $error;
+    color: $white;
+  }
+
+  &-icon {
+    display: flex;
+    align-items: center;
+    font-size: $fs-sm;
+  }
+
+  &-count {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: $fs-xs;
+  }
+}
