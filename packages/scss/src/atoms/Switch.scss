@@ -1,0 +1,84 @@
+@import "foundation/all";
+
+.dse-switch-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: map-get($spacing, 'xs');
+  cursor: pointer;
+
+  &.dse-switch-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.dse-switch-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.dse-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  background-color: $gray-light;
+  border-radius: 12px;
+  transition: background-color 0.2s;
+
+  .dse-switch-input:checked + & {
+    background-color: $success;
+  }
+
+  .dse-switch-slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+  }
+
+  .dse-switch-input:checked + & .dse-switch-slider {
+    transform: translateX(20px);
+  }
+}
+
+// Size variants
+.dse-switch-small {
+  width: 36px;
+  height: 20px;
+
+  .dse-switch-slider {
+    width: 16px;
+    height: 16px;
+  }
+
+  .dse-switch-input:checked + & .dse-switch-slider {
+    transform: translateX(16px);
+  }
+}
+
+.dse-switch-large {
+  width: 52px;
+  height: 28px;
+
+  .dse-switch-slider {
+    width: 24px;
+    height: 24px;
+  }
+
+  .dse-switch-input:checked + & .dse-switch-slider {
+    transform: translateX(24px);
+  }
+}
+
+.dse-switch-label {
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  color: $body-text-color;
+}
