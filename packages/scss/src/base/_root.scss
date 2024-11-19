@@ -1,39 +1,52 @@
 :root {
+  /* Global Colors */
   --dse-body-text-color: #{$dark};
   --dse-body-bg-color: #{$white};
 
+  /* Typography */
+  /* Body */
+  --dse-body-font-size: #{$fs-base};
+  --dse-body-font-weight: #{$fw-normal};
+
+  /* Headings */
+  --dse-h1-font-size: #{$h-1};
+  --dse-h1-font-weight: #{$fw-medium};
+  --dse-h2-font-size: #{$h-2}; 
+  --dse-h2-font-weight: #{$fw-medium};
+  --dse-h3-font-size: #{$h-3};
+  --dse-h3-font-weight: #{$fw-medium};
+  --dse-h4-font-size: #{$h-4};
+  --dse-h4-font-weight: #{$fw-normal};
+  --dse-h5-font-size: #{$h-5};
+  --dse-h5-font-weight: #{$fw-normal};
+  --dse-h6-font-size: #{$h-6};
+  --dse-h6-font-weight: #{$fw-light};
+
+  /* Buttons */
+  /* Primary */
   --dse-btn-primary-color: #{$white};
   --dse-btn-primary-bg: #{$green};
   --dse-btn-primary-bg-hover: #{$green-light};
 
+  /* Secondary */
   --dse-btn-secondary-color: #{$dark};
   --dse-btn-secondary-bg: #{$white};
   --dse-btn-secondary-border: #{$dark};
   --dse-btn-secondary-bg-hover: #{$white-dark};
 
+  /* Danger */
+  --dse-btn-danger-color: #{$white};
+  --dse-btn-danger-bg: #{$red};
+  --dse-btn-danger-bg-hover: #{$red-light};
+
+  /* Forms */
   --dse-form-color: #{$dark};
   --dse-form-bg: #{$white};
+  --dse-form-label-color: #{$dark};
+  --dse-form-background-disabled: #{$white-dark};
+  
+  /* Form States */
   --dse-form-error-color: #{$red};
   --dse-form-error-border: #{$red};
   --dse-form-border-focus-color: #{$green};
-  --dse-form-label-color: #{$dark};
-  --dse-form-background-disabled: #{$white-dark};
-
-
-  --dse-body-font-size: #{$fs-base};
-  --dse-body-font-weight: #{$fw-normal};
-
-  --dse-h1-font-size: #{$h-1};
-  --dse-h2-font-size: #{$h-2};
-  --dse-h3-font-size: #{$h-3};
-  --dse-h4-font-size: #{$h-4};
-  --dse-h5-font-size: #{$h-5};
-  --dse-h6-font-size: #{$h-6};
-
-  --dse-h1-font-weight: #{$fw-medium};
-  --dse-h2-font-weight: #{$fw-medium};
-  --dse-h3-font-weight: #{$fw-medium};
-  --dse-h4-font-weight: #{$fw-normal};
-  --dse-h5-font-weight: #{$fw-normal};
-  --dse-h6-font-weight: #{$fw-light};
 }

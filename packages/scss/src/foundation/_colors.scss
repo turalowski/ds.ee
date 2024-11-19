@@ -18,6 +18,10 @@ $btn-secondary-bg: var(--dse-btn-secondary-bg, $white) !default;
 $btn-secondary-border: var(--dse-btn-secondary-border, $dark) !default;
 $btn-secondary-bg-hover: var(--dse-btn-secondary-bg-hover, $white-dark) !default;
 
+$btn-danger-color: var(--dse-btn-danger-color, $white) !default;
+$btn-danger-bg: var(--dse-btn-danger-bg, $red) !default;
+$btn-danger-bg-hover: var(--dse-btn-danger-bg-hover, $red-light) !default;
+
 /*=============================================
 =            Forms                            =
 =============================================*/

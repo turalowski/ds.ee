@@ -10,6 +10,7 @@ $dark-light: #737680;
 
 $gray: #a3a5ad;
 $gray-light: #bebfc4;
+$gray-dark: #6c6d6f;
 
 $white: #fff;
 $white-dark: #f1f2f3;
@@ -18,7 +19,19 @@ $blue: #0468db;
 $blue-light: #b4d2f4;
 
 $red: #d12727;
-$red-light: #f8dedf;
+$red-light: #de6266;
+
+$success: $green;
+$success-light: $green-light;
+$success-dark: darken($green, 10%);
+
+$warning: #f4b740;
+$warning-light: lighten($warning, 20%);
+$warning-dark: darken($warning, 10%);
+
+$error: $red;
+$error-light: $red-light;
+$error-dark: darken($red, 10%);
 
 /*=============================================
 =            Typography                       =
