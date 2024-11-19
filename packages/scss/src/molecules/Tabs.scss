@@ -1,0 +1,41 @@
+@import "foundation/all";
+
+.dse-tabs {
+  width: 100%;
+
+  &-list {
+    display: flex;
+    border-bottom: 1px solid var(--dse-form-border-color);
+    margin-bottom: map-get($spacing, 'md');
+  }
+
+  .dse-tab-button {
+    background: none;
+    border: none;
+    padding: map-get($spacing, 'sm') map-get($spacing, 'md');
+    cursor: pointer;
+    font-family: $body-font-family;
+    font-size: $fs-base;
+    color: var(--dse-body-text-color);
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+
+    &:hover:not(.dse-tab-disabled) {
+      color: var(--dse-primary);
+    }
+
+    &.dse-tab-active {
+      color: var(--dse-primary);
+      border-bottom-color: var(--dse-primary);
+    }
+
+    &.dse-tab-disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .dse-tab-content {
+    padding: map-get($spacing, 'sm') 0;
+  }
+}
