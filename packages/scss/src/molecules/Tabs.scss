@@ -5,7 +5,7 @@
 
   &-list {
     display: flex;
-    border-bottom: 1px solid var(--dse-form-border-color);
+    border-bottom: 1px solid $form-border-color;
     margin-bottom: map-get($spacing, 'md');
   }
 
@@ -16,17 +16,17 @@
     cursor: pointer;
     font-family: $body-font-family;
     font-size: $fs-base;
-    color: var(--dse-body-text-color);
+    color: $text-primary;
     border-bottom: 2px solid transparent;
     transition: all 0.2s ease;
 
     &:hover:not(.dse-tab-disabled) {
-      color: var(--dse-primary);
+      color: $primary;
     }
 
     &.dse-tab-active {
-      color: var(--dse-primary);
-      border-bottom-color: var(--dse-primary);
+      color: $primary;
+      border-bottom-color: $primary;
     }
 
     &.dse-tab-disabled {

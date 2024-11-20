@@ -1,49 +1,54 @@
 /*=============================================
-=            Global text hcolors              =
+=            Global Colors                    =
 =============================================*/
 
-$body-text-color: var(--dse-body-text-color, $dark) !default;
-$body-bg-color: var(--dse-body-bg-color, $white) !default;
+$body-text-color: var(--dse-text-primary, $text-primary) !default;
+$body-bg-color: var(--dse-background-primary, $background-primary) !default;
 
 /*=============================================
-=            Buttons                          =
+=            Button Colors                    =
 =============================================*/
 
 $btn-primary-color: var(--dse-btn-primary-color, $white) !default;
-$btn-primary-bg: var(--dse-btn-primary-bg, $green) !default;
-$btn-primary-bg-hover: var(--dse-btn-primary-bg-hover, $green-light) !default;
+$btn-primary-bg: var(--dse-btn-primary-bg, $primary) !default;
+$btn-primary-bg-hover: var(--dse-btn-primary-bg-hover, $primary-light) !default;
 
-$btn-secondary-color: var(--dse-btn-secondary-color, $dark) !default;
+$btn-secondary-color: var(--dse-btn-secondary-color, $primary) !default;
 $btn-secondary-bg: var(--dse-btn-secondary-bg, $white) !default;
-$btn-secondary-border: var(--dse-btn-secondary-border, $dark) !default;
-$btn-secondary-bg-hover: var(--dse-btn-secondary-bg-hover, $white-dark) !default;
+$btn-secondary-border: var(--dse-btn-secondary-border, $primary) !default;
+$btn-secondary-bg-hover: var(--dse-btn-secondary-bg-hover, $gray-100) !default;
 
 $btn-danger-color: var(--dse-btn-danger-color, $white) !default;
-$btn-danger-bg: var(--dse-btn-danger-bg, $red) !default;
-$btn-danger-bg-hover: var(--dse-btn-danger-bg-hover, $red-light) !default;
+$btn-danger-bg: var(--dse-btn-danger-bg, $error) !default;
+$btn-danger-bg-hover: var(--dse-btn-danger-bg-hover, $error-light) !default;
 
 /*=============================================
-=            Forms                            =
+=            Form Colors                      =
 =============================================*/
 
-$form-border-color: var(--dse-form-border-color, $white-dark) !default;
-$form-bg-color: var(--dse-form-bg-color, $white) !default;
-$form-bg-color-hover: var(--dse-form-bg-color-hover, $white-dark) !default;
-$form-bg-option-selected: var(--dse-form-bg-option-selected, $green) !default;
-$form-color-option-selected: var(--dse-form-color-option-selected, $white) !default;
-$form-color: var(--dse-form-color, $dark) !default;
-$form-bg: var(--dse-form-bg, $white) !default;
-$form-error-color: var(--dse-form-error-color, $red) !default;
-$form-error-border: var(--dse-form-error-border, $red) !default;
-$form-border-focus-color: var(--dse-form-border-focus-color, $green) !default;
-$form-label-color: var(--dse-form-label-color, $dark) !default;
-$form-background-disabled: var(--dse-form-background-disabled, $white-dark) !default;
+$form-border-color: var(--dse-border-primary, $border-secondary) !default;
+$form-bg-color: var(--dse-background-primary, $background-primary) !default;
+$form-color: var(--dse-text-primary, $text-primary) !default;
+$form-label-color: var(--dse-text-secondary, $text-secondary) !default;
+$form-error-color: var(--dse-color-error, $error) !default;
+$form-error-border: var(--dse-color-error, $error) !default;
+$form-border-focus-color: var(--dse-color-primary, $border-primary) !default;
+$form-disabled-bg: var(--dse-background-disabled, $background-disabled) !default;
 
 /*=============================================
-=            Accordion                        =
+=            Badge Colors                     =
 =============================================*/
 
-$accordion-border-color: var(--dse-accordion-border-color, $gray-light) !default;
-$accordion-color: var(--dse-accordion-color, $dark) !default;
-$accordion-bg: var(--dse-accordion-bg, $white) !default;
-$accordion-hover-bg: var(--dse-accordion-hover-bg, rgba($gray-light, 0.1)) !default;
+$badge-default-bg: var(--dse-color-sucess, $gray-400) !default;
+$badge-success-bg: var(--dse-color-success, $success) !default;
+$badge-warning-bg: var(--dse-color-warning, $warning) !default;
+$badge-error-bg: var(--dse-color-error, $error) !default;
+
+/*=============================================
+=            Accordion Colors                 =
+=============================================*/
+
+$accordion-border-color: var(--dse-border-primary, $border-primary) !default;
+$accordion-color: var(--dse-text-primary, $text-primary) !default;
+$accordion-bg: var(--dse-background-primary, $background-primary) !default;
+$accordion-hover-bg: var(--dse-background-secondary, $background-secondary) !default;

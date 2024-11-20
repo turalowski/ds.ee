@@ -8,7 +8,7 @@
 
 .dse-input-label {
   font-family: $body-font-family;
-  font-size: $body-font-size;
+  font-size: $body-font-size-sm;
   color: $form-label-color;
 }
 
@@ -17,7 +17,9 @@
   font-family: $body-font-family;
   font-size: $body-font-size;
   border: 1px solid $form-border-color;
-  border-radius: 4px;
+  border-radius: map-get($button-radius, 'base');
+  background-color: $form-bg-color;
+  color: $form-color;
   transition: all 0.2s ease-in-out;
 
   &:focus {
@@ -27,12 +29,13 @@
   }
 
   &:disabled {
-    background-color: $form-background-disabled;
+    background-color: $form-disabled-bg;
+    color: $text-disabled;
     cursor: not-allowed;
   }
 
   &.dse-input-error {
-    border-color: $form-error-color;
+    border-color: $form-error-border;
 
     &:focus {
       box-shadow: 0 0 0 2px rgba($form-error-color, 0.1);

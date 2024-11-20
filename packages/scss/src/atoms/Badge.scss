@@ -4,30 +4,30 @@
   display: inline-flex;
   align-items: center;
   padding: map-get($spacing, 'xxxs') map-get($spacing, 'xs');
-  border-radius: 16px;
-  font-size: $fs-sm;
+  border-radius: map-get($button-radius, 'base');
+  font-size: $body-font-size-sm;
   font-weight: $fw-medium;
   line-height: 1;
   gap: map-get($spacing, 'xxs');
   font-family: $body-font-family;
 
   &-default {
-    background-color: $gray-light;
+    background-color: $badge-default-bg;
     color: $white;
   }
 
   &-success {
-    background-color: $success;
+    background-color: $badge-success-bg;
     color: $white;
   }
 
   &-warning {
-    background-color: $warning;
+    background-color: $badge-warning-bg;
     color: $white;
   }
 
   &-error {
-    background-color: $error;
+    background-color: $badge-error-bg;
     color: $white;
   }
 
@@ -38,9 +38,9 @@
   }
 
   &-count {
-    background: rgba(0, 0, 0, 0.1);
-    padding: 2px 6px;
-    border-radius: 10px;
+    background: rgba($text-primary, 0.1);
+    padding: map-get($spacing, 'xxxs') map-get($spacing, 'xxs');
+    border-radius: map-get($button-radius, 'large');
     font-size: $fs-xs;
   }
 }
